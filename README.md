@@ -57,4 +57,4 @@ When run outside a Task Sequence, it will throw a pop-up with what variable woul
 <br>
 <br>
 If you don't feel like having an .XML with options etc, you can also use the lite version to just show hostname, IP, what failed and what code it spat out.<br>
-![TSTS](images/lite.PNG)
+![TSTS](images/lite.png)
