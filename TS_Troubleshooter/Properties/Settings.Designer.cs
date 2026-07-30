@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace J_GUI_TS_Troubleshooter.Properties
+namespace TS_Troubleshooter.Properties
 {
 
 

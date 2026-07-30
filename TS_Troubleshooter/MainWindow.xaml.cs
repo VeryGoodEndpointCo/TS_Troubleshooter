@@ -10,7 +10,7 @@ using System.IO;
 using System.Windows.Input;
 using System.Runtime.InteropServices;
 
-namespace J_GUI_TS_Troubleshooter
+namespace TS_Troubleshooter
 {
 
     public partial class MainWindow : Window

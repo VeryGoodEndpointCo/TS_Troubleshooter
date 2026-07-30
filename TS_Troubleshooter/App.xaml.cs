@@ -7,7 +7,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Controls;
 using System.Xml;
 
-namespace J_GUI_TS_Troubleshooter
+namespace TS_Troubleshooter
 {
     public partial class App : Application
     {

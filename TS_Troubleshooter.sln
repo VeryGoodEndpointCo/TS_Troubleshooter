@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-GUI_TS_Troubleshooter", "J-GUI_TS_Troubleshooter\J-GUI_TS_Troubleshooter.csproj", "{A772C296-C883-4359-962F-D7423A74997A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS_Troubleshooter", "TS_Troubleshooter\TS_Troubleshooter.csproj", "{A772C296-C883-4359-962F-D7423A74997A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45061A1F-A5D4-4F9A-A043-DC8286517952}"
 	ProjectSection(SolutionItems) = preProject

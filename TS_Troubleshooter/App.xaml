@@ -1,7 +1,7 @@
-﻿<Application x:Class="J_GUI_TS_Troubleshooter.App"
+﻿<Application x:Class="TS_Troubleshooter.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:J_GUI_TS_Troubleshooter"
+             xmlns:local="clr-namespace:TS_Troubleshooter"
              Startup="Application_Startup">
     <Application.Resources>
 

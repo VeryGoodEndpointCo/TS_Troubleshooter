@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 
-namespace J_GUI_TS_Troubleshooter
+namespace TS_Troubleshooter
 {
     internal class TS_Integration
     {

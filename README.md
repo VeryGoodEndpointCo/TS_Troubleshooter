@@ -1,10 +1,10 @@
-# J-GUI: TS Troubleshooter #
+# TS Troubleshooter #
 
 -------------------
 
 Since F8 is not a great thing to have enabled within Task Sequences, I made an app to run on failure state that gives users the ability to do their own basic troubleshooting.
 
-This is J-GUI: TS Troubleshooter
+This is TS Troubleshooter
 
 ![TSTS](images/TSTS.PNG)
 
@@ -39,15 +39,15 @@ This is the format of the XML file (case sensitivity does not matter)<br>
 By default, the app will look for config.xml in the same directory it is run from.
 Otherwise you can define it in an argument. Either a website or file share will work.<br>
 ```
-J-GUI_TS_Troubleshooter.exe http://coolwebsite/config.xml
+TS_Troubleshooter.exe http://coolwebsite/config.xml
 ```
 or
 ```
-J-GUI_TS_Troubleshooter.exe C:\Temp\this.xml
+TS_Troubleshooter.exe C:\Temp\this.xml
 ```
 or
 ```
-J-GUI_TS_Troubleshooter.exe \\fileshare\folder1\bing.xml
+TS_Troubleshooter.exe \\fileshare\folder1\bing.xml
 ```
 It'll throw an error if it can't find or access the file specified.
 

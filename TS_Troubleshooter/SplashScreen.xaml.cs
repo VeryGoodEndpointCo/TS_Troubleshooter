@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace J_GUI_TS_Troubleshooter
+namespace TS_Troubleshooter
 {
     /// <summary>
     /// Interaction logic for SplashScreen.xaml
