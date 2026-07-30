@@ -1,0 +1,26 @@
+﻿<Window x:Class="TS_Troubleshooter_Lite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="TS Troubleshooter Lite" Height="300" Width="790">
+    <Grid>
+        <Label Content="TS Troubleshooter Lite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="775" Background="DarkSlateBlue" Foreground="White" HorizontalContentAlignment="Center" FontSize="14" FontStyle="Italic" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,50,0,0" Text="Local Hostname:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="host" HorizontalAlignment="Left" Margin="35,70,0,0" VerticalAlignment="Top" Width="315" Height="25" FontSize="14" VerticalContentAlignment="Center" Padding="3" IsEnabled="False" />
+        <TextBlock HorizontalAlignment="Left" Margin="400,50,0,0" Text="IP Address:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="ip" HorizontalAlignment="Left" Margin="400,70,0,0" VerticalAlignment="Top" Width="315" Height="25" FontSize="14" VerticalContentAlignment="Center" Padding="3" IsEnabled="False" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="35,110,0,0" Text="THIS PC HAS FAILED THE BUILD TASK SEQUENCE" VerticalAlignment="Top" FontSize="20" Width="680" TextAlignment="Center" Foreground="Red"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="36,152,0,0" Text="Failing Step:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="fail_step" HorizontalAlignment="Left" Margin="36,172,0,0" VerticalAlignment="Top" Width="314" Height="25" FontSize="14" VerticalContentAlignment="Center" Padding="3" IsEnabled="False" />
+        <TextBlock HorizontalAlignment="Left" Margin="400,152,0,0" Text="Failing Error Code:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="fail_code" HorizontalAlignment="Left" Margin="400,172,0,0" VerticalAlignment="Top" Width="314" Height="25" FontSize="14" VerticalContentAlignment="Center" Padding="3" IsEnabled="False" />
+
+        <Button Content="Close" Click="CloseButton_Click" HorizontalAlignment="Left" Margin="400,238,0,0" VerticalAlignment="Top" Width="315" Height="34"/>
+
+    </Grid>
+</Window>

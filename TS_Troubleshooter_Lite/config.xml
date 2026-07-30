@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<options>
+  <task TSV="Dump_USB">Dump logs to USB</task>
+  <task TSV="Clean_Disk">Clean the disk</task>
+  <task TSV="Open_CMD">Somehow, open CMD</task>
+</options>

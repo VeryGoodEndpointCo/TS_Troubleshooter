@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.12023.21 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS_Troubleshooter", "TS_Troubleshooter\TS_Troubleshooter.csproj", "{A772C296-C883-4359-962F-D7423A74997A}"
 EndProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		images\TS_Complete.PNG = images\TS_Complete.PNG
 		images\TS_MECM.PNG = images\TS_MECM.PNG
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS_Troubleshooter_Lite", "TS_Troubleshooter_Lite\TS_Troubleshooter_Lite.csproj", "{75C05C01-C58A-4168-BE1D-8777CDF154F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{A772C296-C883-4359-962F-D7423A74997A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A772C296-C883-4359-962F-D7423A74997A}.Release|x64.ActiveCfg = Release|x64
 		{A772C296-C883-4359-962F-D7423A74997A}.Release|x64.Build.0 = Release|x64
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Debug|x64.ActiveCfg = Debug|x64
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Debug|x64.Build.0 = Debug|x64
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Release|x64.ActiveCfg = Release|x64
+		{75C05C01-C58A-4168-BE1D-8777CDF154F6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
