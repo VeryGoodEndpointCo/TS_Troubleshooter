@@ -1,0 +1,115 @@
+<Window x:Class="TS_Troubleshooter_Unified.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="TS Troubleshooter"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        SizeToContent="Height"
+        Width="820"
+        MinHeight="260"
+        Background="{StaticResource WindowBackgroundBrush}"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display">
+
+    <!--
+        Laid out with a Grid instead of the original's absolute margins. The old window pinned
+        every control to a hardcoded pixel offset inside a 775x475 box, and pinned the option
+        list to Height="237" - so once a config file listed more than about eight tasks the
+        extra checkboxes rendered past the edge of the panel and were silently unclickable.
+        Rows size themselves here, and the option list scrolls.
+    -->
+    <Border BorderBrush="{StaticResource AccentBrush}" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- ==== Header ==== -->
+            <Border Grid.Row="0" Style="{StaticResource HeaderBarStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="headerSpacer" Grid.Column="0" Style="{StaticResource HeaderVersionStyle}"
+                               Text="" />
+                    <TextBlock Grid.Column="1" Style="{StaticResource HeaderTitleStyle}"
+                               HorizontalAlignment="Center" Text="TS Troubleshooter" />
+                    <TextBlock x:Name="headerVersion" Grid.Column="2" Style="{StaticResource HeaderVersionStyle}" />
+                </Grid>
+            </Border>
+
+            <!-- ==== Body ==== -->
+            <Grid Grid.Row="1" Margin="35,22,35,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="24" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <TextBlock Style="{StaticResource FieldLabelStyle}" Text="Local Hostname:" />
+                    <TextBox x:Name="host" Style="{StaticResource ReadOnlyFieldStyle}" TabIndex="10" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <TextBlock Style="{StaticResource FieldLabelStyle}" Text="IP Address:" />
+                    <TextBox x:Name="ip" Style="{StaticResource ReadOnlyFieldStyle}" TabIndex="11" />
+                </StackPanel>
+
+                <TextBlock x:Name="banner" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                           Style="{StaticResource BannerStyle}" />
+
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <TextBlock Style="{StaticResource FieldLabelStyle}" Text="Failing Step:" />
+                    <TextBox x:Name="failStep" Style="{StaticResource ReadOnlyFieldStyle}" TabIndex="12" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="2">
+                    <TextBlock Style="{StaticResource FieldLabelStyle}" Text="Failing Error Code:" />
+                    <TextBox x:Name="failCode" Style="{StaticResource ReadOnlyFieldStyle}" TabIndex="13" />
+                </StackPanel>
+
+                <!-- Collapsed entirely when there are no options, which is what the old Lite
+                     build was. Everything above and below stays identical between the two. -->
+                <StackPanel x:Name="optionsSection" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                            Margin="0,20,0,0">
+                    <TextBlock Style="{StaticResource SectionHeadingStyle}"
+                               Text="Select the troubleshooting steps to run:" />
+                    <Border BorderBrush="{StaticResource BorderBrushColor}" BorderThickness="1"
+                            Background="{StaticResource PanelBrush}">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="230" Padding="8,4">
+                            <StackPanel x:Name="optionList" />
+                        </ScrollViewer>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+            <!-- ==== Buttons ==== -->
+            <StackPanel Grid.Row="2" Margin="35,20,35,22"
+                        Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="closeButton" Style="{StaticResource SecondaryButtonStyle}"
+                        Content="_Close" TabIndex="31" IsCancel="True" Click="CloseButton_Click" />
+                <Button x:Name="shutdownButton" Style="{StaticResource ActionButtonStyle}"
+                        Content="Shut _Down PC" TabIndex="32" Click="ShutdownButton_Click" />
+                <Button x:Name="restartButton" Style="{StaticResource ActionButtonStyle}"
+                        Content="_Restart PC" TabIndex="33" IsDefault="True" Click="RestartButton_Click" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

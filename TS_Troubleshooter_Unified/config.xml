@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Only the <task> entries are required. A config file containing nothing but
+  <options></options> is valid and produces the same screen as the old Lite build.
+
+  There is no timeout and no automatic action, by design. This screen holds a failed build
+  until somebody looks at it - if a task sequence fails at 7pm on a Friday the error still
+  has to be on the screen on Monday morning - so it is only ever dismissed by a button press.
+-->
+<options>
+
+  <!-- Optional. Replaces the red banner text. -->
+  <message>THIS PC HAS FAILED THE BUILD TASK SEQUENCE</message>
+
+  <task TSV="Dump_USB">Dump logs to USB</task>
+  <task TSV="Clean_Disk">Clean the disk</task>
+  <task TSV="Open_CMD">Somehow, open CMD</task>
+
+</options>
