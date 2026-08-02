@@ -8,11 +8,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45061A1F-A5D4-4F9A-A043-DC8286517952}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		images\TSTS.PNG = images\TSTS.PNG
-		images\TSTS_restart.PNG = images\TSTS_restart.PNG
 		images\TSTS_XML.PNG = images\TSTS_XML.PNG
-		images\TS_Complete.PNG = images\TS_Complete.PNG
 		images\TS_MECM.PNG = images\TS_MECM.PNG
+		images\unified.png = images\unified.png
+		images\unified_lite.png = images\unified_lite.png
+		images\unified_testrun.png = images\unified_testrun.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS_Troubleshooter_Lite", "TS_Troubleshooter_Lite\TS_Troubleshooter_Lite.csproj", "{75C05C01-C58A-4168-BE1D-8777CDF154F6}"
