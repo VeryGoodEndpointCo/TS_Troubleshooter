@@ -1,0 +1,67 @@
+name: Release
+
+# Pushing a version tag (3.1, 4.0, ...) builds the unified app for x64 and x86 and publishes both
+# as a release. Pushes to master run the same build without publishing.
+
+on:
+  push:
+    branches: [master]
+    tags:
+      - '[0-9]*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Check the tag matches the assembly version
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: |
+          $info = Get-Content TS_Troubleshooter_Unified\Properties\AssemblyInfo.cs -Raw
+          if ($info -notmatch 'AssemblyFileVersion\("([^"]+)"\)') { throw 'No AssemblyFileVersion in AssemblyInfo.cs.' }
+          $assembly = [version]$Matches[1]
+          $tag = [version]'${{ github.ref_name }}'
+          if ($assembly.Major -ne $tag.Major -or $assembly.Minor -ne $tag.Minor -or [math]::Max($tag.Build, 0) -ne $assembly.Build) {
+            throw "Tag ${{ github.ref_name }} does not match AssemblyFileVersion $assembly."
+          }
+
+      # Only the unified app is released; the original and Lite projects are kept for reference.
+      - name: Build
+        run: |
+          msbuild TS_Troubleshooter_Unified\TS_Troubleshooter_Unified.csproj /t:Restore,Build /p:Configuration=Release /p:Platform=x64 /v:minimal
+          msbuild TS_Troubleshooter_Unified\TS_Troubleshooter_Unified.csproj /t:Restore,Build /p:Configuration=Release /p:Platform=x86 /v:minimal
+
+      - name: Collect assets
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          Copy-Item TS_Troubleshooter_Unified\bin\x64\Release\TS_Troubleshooter.exe dist\TS_Troubleshooter-x64.exe
+          Copy-Item TS_Troubleshooter_Unified\bin\x86\Release\TS_Troubleshooter.exe dist\TS_Troubleshooter-x86.exe
+          Get-ChildItem dist | Format-Table Name, Length
+
+      - name: Upload build
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: actions/upload-artifact@v4
+        with:
+          name: TS_Troubleshooter
+          path: dist/
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" (Get-ChildItem dist | ForEach-Object FullName) `
+            --title "TS Troubleshooter ${{ github.ref_name }}" `
+            --generate-notes
