@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("TS_Troubleshooter_Lite")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Very Good Endpoint Co.")]
 [assembly: AssemblyProduct("TS_Troubleshooter_Lite")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("Copyright © 2024 Very Good Endpoint Co.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

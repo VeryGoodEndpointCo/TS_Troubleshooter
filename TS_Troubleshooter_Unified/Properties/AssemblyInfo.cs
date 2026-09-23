@@ -5,9 +5,9 @@ using System.Windows;
 [assembly: AssemblyTitle("TS Troubleshooter")]
 [assembly: AssemblyDescription("Task sequence failure screen for MECM OSD")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Very Good Endpoint Co.")]
 [assembly: AssemblyProduct("TS Troubleshooter")]
-[assembly: AssemblyCopyright("Copyright © 2026")]
+[assembly: AssemblyCopyright("Copyright © 2026 Very Good Endpoint Co.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

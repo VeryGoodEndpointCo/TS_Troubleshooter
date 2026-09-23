@@ -38,7 +38,7 @@ hostname and IP have been replaced with placeholders.
 
 ## Download
 
-Prebuilt binaries are on the [releases page](https://github.com/iron-jay/TS_Troubleshooter/releases):
+Prebuilt binaries are on the [releases page](https://github.com/VeryGoodEndpointCo/TS_Troubleshooter/releases):
 
 | File | Use it for |
 | --- | --- |
